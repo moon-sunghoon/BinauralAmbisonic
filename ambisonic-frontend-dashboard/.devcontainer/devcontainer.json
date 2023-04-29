@@ -24,13 +24,17 @@
 		"vscode": {"extensions": [
 			"Vue.vscode-typescript-vue-plugin",
 			"Vue.volar",
-			"christian-kohler.npm-intellisense"
+			"christian-kohler.npm-intellisense",
+			"ms-azuretools.vscode-docker"
 		]},
 		"settings": {
 			"remote.autoForwardPorts": false
 		}
-	}
+	},
+	
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	
+	
 }
