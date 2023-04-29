@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  ambisnoicfrontenddashboard:
+    image: ambisnoicfrontenddashboard
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    # ports:
+    #   - 3000:3000
+
+
