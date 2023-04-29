@@ -1,0 +1,9 @@
+services:
+  ambisonic-frontend-dashboard:
+    build:
+      context: ./ambisonic-frontend-dashboard
+      dockerfile: dockerfile
+      target: tmp-runtime
+    restart: on-failure  
+
+    

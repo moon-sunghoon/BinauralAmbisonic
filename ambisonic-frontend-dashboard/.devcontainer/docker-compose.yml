@@ -1,21 +1,26 @@
 version: '3.8'
 
 services:
-  ambisonicfrontenddashboard:
-    image: ambisonicfrontenddashboard
+  ambisonic-frontend-dashboard:
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context: ambisonic-frontend-dashboard
+      dockerfile: .devcontainer/Dockerfile
+      target: dev
     environment:
       NODE_ENV: development
-    # ports:
-    #   - 3000:3000
+
+    ports:
+      - 3000:80
     volumes:
     # Mounts the project folder to '/workspace'. The target path inside the container
     # should match what your application expects. In this case, the compose file is
     # in a sub-folder, so you will mount '..'. You would then reference this path as the
     # 'workspaceFolder' in '.devcontainer/devcontainer.json' so VS Code starts here.
       - ..:/workspace:cached
+    
     command: /bin/sh -c "while sleep 1000; do :; done"
+
+  
+    
 
 

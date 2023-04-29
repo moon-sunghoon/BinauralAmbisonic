@@ -1,9 +1,12 @@
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 18, 16, 14, 18-bullseye, 16-bullseye, 14-bullseye, 18-buster, 16-buster, 14-buster
-ARG VARIANT=18
-FROM mcr.microsoft.com/devcontainers/javascript-node:0-${VARIANT}
-
+ARG NODE_MAJOR_VERSION=18
+FROM mcr.microsoft.com/devcontainers/typescript-node:0-${NODE_MAJOR_VERSION} as dev
+RUN yarn install --dev
 RUN su node -c "umask 0002 && npm install -g http-server @vue/cli @vue/cli-service-global"
+
 WORKDIR /app
+
+
 
 
 
