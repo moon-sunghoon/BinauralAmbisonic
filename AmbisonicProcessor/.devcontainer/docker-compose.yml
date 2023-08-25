@@ -7,7 +7,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
       target: dev
     environment:
-      NODE_ENV: development
+      ENV: development
 
     volumes:
     # Mounts the project folder to '/workspace'. The target path inside the container

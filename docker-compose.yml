@@ -6,9 +6,9 @@ services:
 
     restart: on-failure  
 
-  # ambisonic-processor:
-  #   build:
-  #     context : ./AmbisonicProcessor
-  #     dockerfile: .devcontainer/Dockerfile
-  #     target: runtime
-  #   restart: on-failure
+  ambisonic-processor:
+    build:
+      context : ./AmbisonicProcessor
+      dockerfile: /Dockerfile
+      target: runtime
+    restart: on-failure

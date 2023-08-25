@@ -7,11 +7,14 @@
 
 	"name": "Ambisonic Processor",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerComposeFile" : ["../../docker-compose.yml","docker-compose.yml"],
+	"dockerComposeFile" : ["../../docker-compWose.yml","docker-compose.yml"],
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {
-	// 	"ghcr.io/devcontainers-contrib/features/vue-cli:2": {}
-	// },
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {},
+		"ghcr.io/devcontainers-contrib/features/apt-packages:1" : {},
+		"ghcr.io/devcontainers-community/features/bazel:1": {},
+		"ghcr.io/devcontainers-community/features/cmake:2": {}
+	},
 	
 	"service":"ambisonic-processor",
 	"workspaceFolder": "/workspace/ambisonic-processor",
