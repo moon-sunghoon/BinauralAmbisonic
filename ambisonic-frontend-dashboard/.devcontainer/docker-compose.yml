@@ -16,7 +16,7 @@ services:
     # should match what your application expects. In this case, the compose file is
     # in a sub-folder, so you will mount '..'. You would then reference this path as the
     # 'workspaceFolder' in '.devcontainer/devcontainer.json' so VS Code starts here.
-      - ..:/workspace:cached
+      - .:/workspace
     
     command: /bin/sh -c "while sleep 1000; do :; done"
 
