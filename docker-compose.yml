@@ -2,8 +2,13 @@ services:
   ambisonic-frontend-dashboard:
     build:
       context: ./ambisonic-frontend-dashboard
-      dockerfile: dockerfile
-      target: tmp-runtime
+      dockerfile: /Dockerfile
+
     restart: on-failure  
 
-    
+  # ambisonic-processor:
+  #   build:
+  #     context : ./AmbisonicProcessor
+  #     dockerfile: .devcontainer/Dockerfile
+  #     target: runtime
+  #   restart: on-failure
