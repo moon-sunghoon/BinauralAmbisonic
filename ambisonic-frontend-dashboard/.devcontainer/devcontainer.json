@@ -10,7 +10,7 @@
 	},
 	
 	"service":"ambisonic-frontend-dashboard",
-	"workspaceFolder": "/workspace/BinauralAmbisonic",
+	"workspaceFolder": "/workspace/ambisonic-frontend-dashboard",
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
