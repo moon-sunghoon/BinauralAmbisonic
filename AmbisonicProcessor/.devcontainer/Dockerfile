@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/devcontainers/cpp:0-debian-11
+ARG VARIANT=debian-11
+FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
 # These commands copy your files into the specified directory in the image
 # and set that as the working location
@@ -16,13 +17,20 @@ RUN apt-get update && apt-get upgrade -y \
   unzip \
   && apt-get clean
 
-WORKDIR /myapp
+ENV GRPC_RELEASE_TAG v1.57.0
 
-RUN cd grpc \
-    bazel build :all
-# This command compiles your app using GCC, adjust for your source code
+RUN echo "-- cloning grpc repo" && \
+    git clone --recurse-submodules -b ${GRPC_RELEASE_TAG} --depth 1 --shallow-submodules https://github.com/grpc/grpc /var/local/git/grpc && \
+    cd /var/local/git/grpc && \
+    git submodule update --init --recursive
 
-# This command runs your application, comment out this line to compile only
-CMD ["./myapp"]
+RUN echo "-- installing grpc" && \
+    cd /var/local/git/grpc && \
+    mkdir -p cmake/build && \
+    cd cmake/build && \
+    cmake ../.. -DgRPC_INSTALL=ON && \
+    make &&\
+    make install
 
-LABEL Name=devcontainer Version=0.0.1
+# RUN cd grpc && \
+#     bazel build :all

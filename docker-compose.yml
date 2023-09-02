@@ -2,13 +2,17 @@ services:
   ambisonic-frontend-dashboard:
     build:
       context: ./ambisonic-frontend-dashboard
-      dockerfile: /Dockerfile
+      dockerfile: Dockerfile
 
-    restart: on-failure  
+    restart: on-failure
+    ports:
+      - 3000:80
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
 
   ambisonic-processor:
     build:
       context : ./AmbisonicProcessor
-      dockerfile: /Dockerfile
-      target: runtime
+
+    command: /bin/sh -c "while sleep 1000; do :; done"
     restart: on-failure

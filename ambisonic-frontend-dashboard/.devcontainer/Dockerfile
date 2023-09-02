@@ -4,7 +4,6 @@ FROM mcr.microsoft.com/devcontainers/typescript-node:0-${NODE_MAJOR_VERSION} as 
 RUN yarn install --dev
 RUN su node -c "umask 0002 && npm install -g http-server @vue/cli @vue/cli-service-global"
 
-WORKDIR /app
 
 
 

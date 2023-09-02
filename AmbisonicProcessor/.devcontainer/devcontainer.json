@@ -5,19 +5,19 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye"
 
-	"name": "Ambisonic Processor",
+	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerComposeFile" : ["../../docker-compWose.yml","docker-compose.yml"],
+	"dockerComposeFile" : ["../../docker-compose.yml", "docker-compose.yml"],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {},
-		"ghcr.io/devcontainers-contrib/features/apt-packages:1" : {},
-		"ghcr.io/devcontainers-community/features/bazel:1": {},
-		"ghcr.io/devcontainers-community/features/cmake:2": {}
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/apt-packages:1" : {}
 	},
 	
 	"service":"ambisonic-processor",
-	"workspaceFolder": "/workspace/ambisonic-processor",
+	"workspaceFolder": "/workspace/AmbisonicProcessor",
 	// "features": {},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -29,7 +29,6 @@
 	// "customizations": {},
 	"customizations": {
 		"vscode": {"extensions": [
-
 			"ms-azuretools.vscode-docker",
 			"ms-vscode.cpptools-themes",
 			"ms-vscode.cpptools",
